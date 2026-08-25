@@ -3,3 +3,10 @@ body {
   background-color: #e7fffa;
   font-family:'Times New Roman', Times, serif;
 }
+.subtitle { color: rgb(6, 80, 149); }
+#page-title { font-size: 48px; color: navy; }
+#my-name {
+  color: navy;
+  font-size: 40px;
+}
+
