@@ -9,4 +9,13 @@ body {
   color: navy;
   font-size: 40px;
 }
-
+.subtitle {
+  border: 2px solid black;
+  padding: 20px;
+  margin: 40px;
+}
+.favorites-list {
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
