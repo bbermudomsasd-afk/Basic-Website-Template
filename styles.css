@@ -2,6 +2,7 @@ body {
   color: #222926;
   background-color: #e7fffa;
   font-family:'Times New Roman', Times, serif;
+    border: 2px solid #315fae;
 }
 .subtitle { color: rgb(6, 80, 149); }
 #page-title { font-size: 48px; color: navy; }
@@ -19,3 +20,4 @@ body {
   margin-top: 10px;
   margin-bottom: 40px;
 }
+
