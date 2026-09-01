@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snake</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>snake fun game!🇩🇰</h1>
+  <p><a href="index.html">Back to home</a></p>
+<canvas id="gameCanvas" width="400" height="400"></canvas>
+
+</body>
+ 
+  <script>
+    var canvas = document.getElementById("gameCanvas");
+    var ctx = canvas.getContext("2d");
+    var CELL = 20;
+ 
+    var snake = { x: 6, y: 7 };
+ 
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, 400, 400);
+ 
+    ctx.fillStyle = "red";
+    ctx.fillRect(snake.x * CELL, snake.y * CELL, CELL, CELL);
+  </script>
+
+
+</html>
