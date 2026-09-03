@@ -17,6 +17,9 @@
     var CELL = 20;
  
     var snake = { x: 6, y: 7 };
+    var dx = 20; // how far snake.x changes each step
+    var dy = 0;  // how far snake.y changes each step
+
  
     function drawBoard() {
   ctx.fillStyle = "#FF0000";
@@ -27,21 +30,70 @@
 }
  
 setInterval(step, 100);
+    
 function step() {
-  snake.x = snake.x + 20;
+  snake.x = snake.x + dx;
+  snake.y = snake.y + dy;
   drawBoard();
 }
-function step() {
-  snake.x = snake.x + 20;
- 
-  if (snake.x > 380) {
-    snake.x = 0;
+
+   document.addEventListener("keydown", function(event) {
+  if (event.key === "ArrowRight") {
+    dx = 20;
+    dy = 0;
   }
+  if (event.key === "ArrowLeft") {
+    dx = -20;
+    dy = 0;
+  }
+     if (event.key === "ArrowRight") {
+  dx = 20;
+  dy = 0;   // yes - turns off any up/down movement
+}
+if (event.key === "ArrowUp") {
+    dx = 0;
+    dy = -20;
+  }
+  if (event.key === "ArrowDown") {
+    dx = 0;
+    dy = 20;
+  }
+       if (event.key === "ArrowRight") {
+    dx = 20;
+    dy = 0;
+  }
+  if (event.key === "a") {
+    dx = -20;
+    dy = 0;
+  }
+     if (event.key === "d") {
+  dx = 20;
+  dy = 0;   // yes - turns off any up/down movement
+}
+if (event.key === "w") {
+    dx = 0;
+    dy = -20;
+  }
+  if (event.key === "s") {
+    dx = 0;
+    dy = 20;
+  }
+
+});
+
+    function step() {
+  snake.x = snake.x + dx;
+  snake.y = snake.y + dy;
+ 
+  if (snake.x > 380) { snake.x = 0; }
+  if (snake.x < 0) { snake.x = 380; }
+  if (snake.y > 380) { snake.y = 0; }
+  if (snake.y < 0) { snake.y = 380; }
  
   drawBoard();
 }
+
 
 
   </script>
-
 </html>
