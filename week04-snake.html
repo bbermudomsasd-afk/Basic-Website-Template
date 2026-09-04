@@ -22,16 +22,29 @@
     var snake = { x: 6, y: 7 };
     var dx = 20; // how far snake.x changes each step
     var dy = 0;  // how far snake.y changes each step
+    var body = [];        // every square the snake is made of
+    var snakeLength = 3;  // how long it is supposed to be
+    var apple = { x: 200, y: 200 };
 
- 
+
+    
+
     function drawBoard() {
   ctx.fillStyle = "#FF0000";
   ctx.fillRect(0, 0, 400, 400);
  
   ctx.fillStyle = "#FFFFFF";
   ctx.fillRect(snake.x, snake.y, 20, 20);
-}
- 
+
+ for (var i = 0; i < body.length; i++) {
+    ctx.fillRect(body[i].x, body[i].y, 20, 20);
+  }
+    
+      ctx.fillStyle = "#FFFFFF";
+  ctx.fillRect(apple.x, apple.y, 20, 20);
+    }
+  
+    
 setInterval(step, 100);
     
 function step() {
@@ -92,11 +105,28 @@ if (event.key === "w") {
   if (snake.x < 0) { snake.x = 380; }
   if (snake.y > 380) { snake.y = 0; }
   if (snake.y < 0) { snake.y = 380; }
+
+  if (
+  snake.x < apple.x + 20 &&
+  snake.x + 20 > apple.x &&
+  snake.y < apple.y + 20 &&
+  snake.y + 20 > apple.y) 
+  {
+        snakeLength = snakeLength + 1; 
+        apple.x = Math.floor(Math.random() * 20) * 20;
+        apple.y = Math.floor(Math.random() * 20) * 20;
+      }
+      
+
+      body.push({ x: snake.x, y: snake.y });
+ 
+  while (body.length > snakeLength) {
+    body.shift();
+  }
+      
  
   drawBoard();
 }
-
-
 
   </script>
 </html>
