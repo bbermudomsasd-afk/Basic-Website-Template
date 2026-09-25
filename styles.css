@@ -20,12 +20,17 @@ body {
   text-align: center;
 }
 
-.roller-game iframe {
-  display: block;
-  width: min(100%, 820px);
-  height: min(440px, 65vh);
-  min-height: 320px;
-  border: 0;
+.roller-game-link {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 2px solid #315fae;
+  color: #222926;
+  text-decoration: none;
+}
+
+.roller-game-link:focus-visible {
+  outline: 3px solid #222926;
+  outline-offset: 3px;
 }
 
 .favorites-list {
