@@ -20,6 +20,14 @@ body {
   text-align: center;
 }
 
+.roller-game iframe {
+  display: block;
+  width: min(100%, 820px);
+  height: min(440px, 65vh);
+  min-height: 320px;
+  border: 0;
+}
+
 .favorites-list {
   padding-left: 30px;
   margin-top: 10px;
